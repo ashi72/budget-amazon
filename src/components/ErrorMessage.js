@@ -1,10 +1,12 @@
-const ErrorMessage = ({ message }) => {
-    if (!message)
+const ErrorMessage = ({ messages }) => {
+    if (messages === [])
         return null
-
+    messages.sort().reverse()
     return (
-        <div>
-            {message}
+        <div style={{color: 'red'}}>
+            <ul>
+                {messages.map(error => <li key={error}>{error}</li>)}
+            </ul>
         </div>
     )
 }

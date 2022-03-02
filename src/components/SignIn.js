@@ -1,12 +1,17 @@
-import { useState }  from 'react'
+import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import ErrorMessage from "./ErrorMessage"
 import LabelledInput from "./LabelledInput"
+import { UserContext } from '../contexts/UserContext'
 import { ERRORS as ERROR } from "../constants/errors.js"
 
 const SignIn = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState([])
+    const {user, setUser} = useContext(UserContext)
+    const navigate = useNavigate()
 
     // dummy login
     const correctUser = 'ucla'
@@ -20,8 +25,14 @@ const SignIn = () => {
         if (username === correctUser && password === correctPass) {
             console.log('login successful')
             setError([])
+            setUser({
+                    username: correctUser,
+                    password: correctPass,
+                }
+            )
+            navigate('/')
         }
-        else {
+        else if(!error.includes(ERROR.WRONG_COMBO)) {
             setError(error.concat(ERROR.WRONG_COMBO))
         }
     }

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import ErrorMessage from "./ErrorMessage"
@@ -17,6 +17,13 @@ const SignIn = () => {
     const correctUser = 'ucla'
     const correctPass = 'la'
 
+    useEffect(() => {
+        if(user) {
+            alert("heyo you're already logged in why are you here")
+            navigate('/', { replace: true })
+        }
+    }, [user])
+
     const login = (event) => {
         event.preventDefault()
         console.log(`tried to log into "${username}" with "${password}"`)
@@ -25,12 +32,14 @@ const SignIn = () => {
         if (username === correctUser && password === correctPass) {
             console.log('login successful')
             setError([])
-            setUser({
-                    username: correctUser,
-                    password: correctPass,
-                }
-            )
-            navigate('/')
+            let response = {
+                username: 'bruin',
+                token: 1,
+                expiry: Date.now() + 10000 // 10 seconds until token expires
+            }
+            setUser(response)
+            localStorage.setItem('user', JSON.stringify(response))
+            navigate('/', { replace: true })
         }
         else if(!error.includes(ERROR.WRONG_COMBO)) {
             setError(error.concat(ERROR.WRONG_COMBO))

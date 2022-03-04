@@ -1,3 +1,43 @@
 * {
   margin: 0;
 }
+
+form {
+  padding-top: 50px;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+
+.labelled-input {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+}
+
+.labelled-input:focus-within label, .labelled-input .filled {
+  transform: translate(0, 12px) scale(0.8);
+}
+.labelled-input:focus-within label {
+  color: #000000;
+}
+
+.labelled-input label {
+  position: absolute;
+  transform: translate(0, 23px);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #6e7588;
+  font-size: 16px;
+  line-height: 1;
+  left: 16px;
+}
+
+.labelled-input input {
+  height: 32px;
+  padding: 24px 16px 4px 14px;
+  font-size: 16px;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}

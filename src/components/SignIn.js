@@ -69,11 +69,13 @@ const SignIn = () => {
             <ErrorMessage messages={error}/>
             <form onSubmit={login}>
                 <LabelledInput
+                    type={'text'}
                     label={"Username or Email"}
                     value={username}
                     onChange={handleUserChange}
                 />
                 <LabelledInput
+                    type={'password'}
                     label={"Password"}
                     value={password}
                     onChange={handlePassChange}

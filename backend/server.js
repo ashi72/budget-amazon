@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+const connectDB = require('./db');
+const users = require("./routes/users");
+const reviews = require("./routes/reviews");
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+connectDB();
+app.use('/users/api/v1', users);
+app.use('/reviews/api/v1', reviews);
+app.listen(7000, () => console.log(`API Server listening on port 7000`));

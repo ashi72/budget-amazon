@@ -2,21 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const Review = require("../models/Review");
-const User = require("../models/User");
-const mongoose = require ('mongoose');
-
-const testSeller = new User({
-  _id: new mongoose.Types.ObjectId(),
-  userEmail: "shi@gmail.com" 
-});
-console.log ("This is the id of the test property: " +testSeller._id);
-
-const testReviewer = new User({
-  _id: new mongoose.Types.ObjectId(),
-  userEmail: "aaron@gmail.com" 
-});
-
-console.log ("This is the id of the test user: " +testReviewer._id);
 
 router.post('/postReview', (req, res) => {
   Review.findOne({reviewer: req.body.reviewer, seller: req.body.seller, review: req.body.review}).then(review=>{

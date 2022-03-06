@@ -10,7 +10,7 @@ const UserSchema = new Schema({
     UID: String,
     phoneNumber: String,
     reviews: [{type: mongoose.Schema.Types.ObjectId, ref: 'Review'}],
-    products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Property'}]
+    products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
 })
 
 module.exports = mongoose.model('user', UserSchema);

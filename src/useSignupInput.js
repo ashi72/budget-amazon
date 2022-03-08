@@ -1,23 +1,36 @@
 import { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import registerAPI from "./services/register";
+import { ERRORS as ERROR } from "./constants/errors";
 
 const SignupInput = (validate) => {
   const [values, setValues] = useState({
-    Name: "",
+    name: "",
     UID: "",
-    Username: "",
-    Email: "",
-    Password: "",
-    ConfPassword: "",
+    username: "",
+    email: "",
+    password: "",
+    confpassword: "",
   });
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setErrors(validate(values));
-    if (Object.keys(errors).length === 0 && Object.keys(values).length !== 0) {
-      const data = new FormData(e.target);
-      console.log(Object.fromEntries(data));
+    console.log(errors);
+    if (Object.keys(errors).length !== 0) {
+      alert("nono");
+      return;
+    }
+    try {
+      const user = await registerAPI.register(values);
+      navigate("/", { replace: true });
+    } catch (e) {
+      // if (!error.includes(ERROR.WRONG_COMBO)) {
+      //   setError(error.concat(ERROR.WRONG_COMBO));
+      // }
     }
   };
 

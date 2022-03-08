@@ -2,8 +2,8 @@ import { React } from "react";
 import { Typography, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import SignupInput from "./useSignupInput";
-import validateSignUp from "./validateSignUp";
+import SignupInput from "../useSignupInput";
+import validateSignUp from "../validateSignUp";
 
 const Signup = () => {
   const { handleChange, handleSubmit, values, errors } =
@@ -14,18 +14,17 @@ const Signup = () => {
       <div className="signup__container">
         <form onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
-          <div className="ui divider"></div>
           <div className="ui form">
             <div className="entry">
               <input
-                type="Name"
-                name="Name"
+                type="name"
+                name="name"
                 placeholder="Name"
-                value={values.Name}
+                value={values.name}
                 onChange={handleChange}
               />
-              {errors.Name && (
-                <Typography style={{ color: "red" }}>{errors.Name}</Typography>
+              {errors.name && (
+                <Typography style={{ color: "red" }}>{errors.name}</Typography>
               )}
             </div>
             <div className="entry">
@@ -42,56 +41,56 @@ const Signup = () => {
             </div>
             <div className="entry">
               <input
-                type="Username"
-                name="Username"
+                type="username"
+                name="username"
                 placeholder="Username"
-                value={values.Username}
+                value={values.username}
                 onChange={handleChange}
               />
-              {errors.Username && (
+              {errors.username && (
                 <Typography style={{ color: "red" }}>
-                  {errors.Username}
+                  {errors.username}
                 </Typography>
               )}
             </div>
             <div className="entry">
               <input
                 type="text"
-                name="Email"
-                placeholder="E-mail"
-                value={values.Email}
+                name="email"
+                placeholder="Email"
+                value={values.email}
                 onChange={handleChange}
               />
-              {errors.Email && (
-                <Typography style={{ color: "red" }}>{errors.Email}</Typography>
+              {errors.email && (
+                <Typography style={{ color: "red" }}>{errors.email}</Typography>
               )}
             </div>
             <div className="entry">
               <input
                 type="Password"
-                name="Password"
+                name="password"
                 placeholder="Password"
-                value={values.Password}
+                value={values.password}
                 onChange={handleChange}
               />
-              {errors.Password && (
+              {errors.password && (
                 <Typography style={{ color: "red" }}>
-                  {errors.Password}
+                  {errors.password}
                 </Typography>
               )}
             </div>
             <div className="entry">
               <input
                 type="Password"
-                name="ConfPassword"
+                name="confpassword"
                 placeholder="Confirm Password"
-                value={values.ConfPassword}
+                value={values.confpassword}
                 onChange={handleChange}
               />
             </div>
-            {errors.ConfPassword && (
+            {errors.confpassword && (
               <Typography style={{ color: "red" }}>
-                {errors.ConfPassword}
+                {errors.confpassword}
               </Typography>
             )}
 

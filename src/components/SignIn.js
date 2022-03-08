@@ -1,5 +1,7 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+import loginAPI from "../services/login.js"
 
 import ErrorMessage from "./ErrorMessage"
 import LabelledInput from "./LabelledInput"
@@ -13,9 +15,20 @@ const SignIn = () => {
     const {user, setUser} = useContext(UserContext)
     const navigate = useNavigate()
 
+<<<<<<< HEAD
     // dummy login
     const correctUser = 'ucla'
     const correctPass = 'la'
+
+=======
+>>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
+    useEffect(() => {
+        if(user) {
+            alert("heyo you're already logged in why are you here")
+            navigate('/', { replace: true })
+<<<<<<< HEAD
+        }
+    }, [user])
 
     const login = (event) => {
         event.preventDefault()
@@ -25,15 +38,37 @@ const SignIn = () => {
         if (username === correctUser && password === correctPass) {
             console.log('login successful')
             setError([])
-            setUser({
-                    username: correctUser,
-                    password: correctPass,
-                }
-            )
-            navigate('/')
+            let response = {
+                username: 'bruin',
+                token: 1,
+                expiry: Date.now() + 10000 // 10 seconds until token expires
+            }
+            setUser(response)
+            localStorage.setItem('user', JSON.stringify(response))
+            navigate('/', { replace: true })
+=======
+>>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
         }
-        else if(!error.includes(ERROR.WRONG_COMBO)) {
-            setError(error.concat(ERROR.WRONG_COMBO))
+    }, [user])
+
+    const handleLogin = async (event) => {
+        event.preventDefault()
+
+        try {
+            const user = await loginAPI.login({
+                username,
+                password
+            })
+            setUsername('')
+            setPassword('')
+            localStorage.setItem('user', JSON.stringify(user));
+            navigate('/', { replace: true })
+            setUser(user)
+
+        } catch (e) {
+            if(!error.includes(ERROR.WRONG_COMBO)) {
+                setError(error.concat(ERROR.WRONG_COMBO))
+            }
         }
     }
 
@@ -58,13 +93,15 @@ const SignIn = () => {
         <div>
             <h1>Sign into your account!</h1>
             <ErrorMessage messages={error}/>
-            <form onSubmit={login}>
+            <form onSubmit={handleLogin}>
                 <LabelledInput
+                    type={'text'}
                     label={"Username or Email"}
                     value={username}
                     onChange={handleUserChange}
                 />
                 <LabelledInput
+                    type={'password'}
                     label={"Password"}
                     value={password}
                     onChange={handlePassChange}

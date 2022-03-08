@@ -1,8 +1,9 @@
-const LabelledInput = ({ label, value, onChange }) => {
+const LabelledInput = ({ type, label, value, onChange }) => {
     return (
-        <div>
-            <label htmlFor={`text-${label}`}>{label}: </label>
+        <div className='labelled-input'>
+            <label className={value && 'filled'} htmlFor={`text-${label}`}>{label}</label>
             <input
+                type={type}
                 id={`text-${label}`}
                 value={value}
                 onChange={onChange}

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import registerAPI from "./services/register";
-import { ERRORS as ERROR } from "./constants/errors";
 
 const SignupInput = (validate) => {
   const [values, setValues] = useState({

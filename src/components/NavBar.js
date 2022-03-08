@@ -5,6 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 
 const NavBar = ({ onLogout }) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
   const { user } = useContext(UserContext);
 
   return (
@@ -25,6 +26,8 @@ const NavBar = ({ onLogout }) => {
   );
 };
 =======
+=======
+>>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
     const {user} = useContext(UserContext)
 
     return (

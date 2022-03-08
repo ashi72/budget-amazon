@@ -16,16 +16,20 @@ const SignIn = () => {
     const navigate = useNavigate()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // dummy login
     const correctUser = 'ucla'
     const correctPass = 'la'
 
 =======
 >>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
+=======
+>>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
     useEffect(() => {
         if(user) {
             alert("heyo you're already logged in why are you here")
             navigate('/', { replace: true })
+<<<<<<< HEAD
 <<<<<<< HEAD
         }
     }, [user])
@@ -46,6 +50,8 @@ const SignIn = () => {
             setUser(response)
             localStorage.setItem('user', JSON.stringify(response))
             navigate('/', { replace: true })
+=======
+>>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
 =======
 >>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
         }

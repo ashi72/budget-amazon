@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -40,6 +41,8 @@ function App() {
     </UserContext.Provider>
   );
 =======
+=======
+>>>>>>> cbb3ec7ea1bece82897eec97e377e4249fcaf216
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 

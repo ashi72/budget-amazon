@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import loginAPI from "../services/login.js"
+
 import ErrorMessage from "./ErrorMessage"
 import LabelledInput from "./LabelledInput"
 import { UserContext } from '../contexts/UserContext'
@@ -13,10 +15,6 @@ const SignIn = () => {
     const {user, setUser} = useContext(UserContext)
     const navigate = useNavigate()
 
-    // dummy login
-    const correctUser = 'ucla'
-    const correctPass = 'la'
-
     useEffect(() => {
         if(user) {
             alert("heyo you're already logged in why are you here")
@@ -24,25 +22,24 @@ const SignIn = () => {
         }
     }, [user])
 
-    const login = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault()
-        console.log(`tried to log into "${username}" with "${password}"`)
 
-        // test if states updating properly
-        if (username === correctUser && password === correctPass) {
-            console.log('login successful')
-            setError([])
-            let response = {
-                username: 'bruin',
-                token: 1,
-                expiry: Date.now() + 10000 // 10 seconds until token expires
-            }
-            setUser(response)
-            localStorage.setItem('user', JSON.stringify(response))
+        try {
+            const user = await loginAPI.login({
+                username,
+                password
+            })
+            setUsername('')
+            setPassword('')
+            localStorage.setItem('user', JSON.stringify(user));
             navigate('/', { replace: true })
-        }
-        else if(!error.includes(ERROR.WRONG_COMBO)) {
-            setError(error.concat(ERROR.WRONG_COMBO))
+            setUser(user)
+
+        } catch (e) {
+            if(!error.includes(ERROR.WRONG_COMBO)) {
+                setError(error.concat(ERROR.WRONG_COMBO))
+            }
         }
     }
 
@@ -67,7 +64,7 @@ const SignIn = () => {
         <div>
             <h1>Sign into your account!</h1>
             <ErrorMessage messages={error}/>
-            <form onSubmit={login}>
+            <form onSubmit={handleLogin}>
                 <LabelledInput
                     type={'text'}
                     label={"Username or Email"}

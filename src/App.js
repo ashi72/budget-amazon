@@ -18,7 +18,7 @@ function App() {
             if(Date.now() > found.expiry)
                 localStorage.removeItem('user')
             else
-                setUser(localStorage.getItem('user'))
+                setUser(JSON.parse(localStorage.getItem('user')))
     }, [])
 
     const logout = () => {

@@ -20,7 +20,7 @@ const SignIn = () => {
       alert("heyo you're already logged in why are you here");
       navigate("/", { replace: true });
     }
-  }, [user]);
+  }, [user, navigate]);
 
   const handleLogin = async (event) => {
     event.preventDefault();

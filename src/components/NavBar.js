@@ -9,7 +9,7 @@ const NavBar = ({ onLogout }) => {
   return (
     <nav style={{ display: "flex" }}>
       <h1>Bruin Market</h1>
-      <div>{user?.username ?? "Guest Bruin"}</div>
+      <div>{user?.name ?? "Guest Bruin"}</div>
       <div>
         <Link to="/">Home</Link>
         {!user && <Link to="/login">Log In</Link>}

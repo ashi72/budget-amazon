@@ -14,4 +14,11 @@ export const ERRORS = {
   PASSWORD_NOTMATCH: "Passwords are not the same!",
   UID_REQ: "UID required!",
   UID_INVALID: "UID must be 9 numbers long!",
+  PRODUCT_NAME_REQ: "Product name required!",
+  PRICE_REQ: "Price required!",
+  PRICE_INVALID: "Price invalid!",
+  STOCK_REQ: "Stock required!",
+  STOCK_INVALID: "Stock invalid!",
+  SHORT_DESC_REQ: "You must input a short description for your product!",
+  DESC_REQ: "You must input a longer description for your product as well!",
 };

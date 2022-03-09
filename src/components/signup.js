@@ -1,13 +1,25 @@
-import { React } from "react";
+import { React, useContext, useEffect } from "react";
 import { Typography, Container } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import SignupInput from "../useSignupInput";
-import validateSignUp from "../validateSignUp";
+import SignupInput from "../hooks/useSignupInput";
+import validateSignUp from "../services/validateSignUp";
+import { UserContext } from "../contexts/UserContext";
 
 const Signup = () => {
   const { handleChange, handleSubmit, values, errors } =
     SignupInput(validateSignUp);
+
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log(user);
+    if (user) {
+      alert("heyo you're already logged in why are you here");
+      navigate("/", { replace: true });
+    }
+  }, [user, navigate]);
 
   return (
     <div className="signup">
@@ -94,17 +106,17 @@ const Signup = () => {
               </Typography>
             )}
 
-              <button type="submit" className="signup__Button">
-                Create Account
-              </button>
-              <span className="formLogin">
-                Already have an account? Login{" "}
-                <Link className="formLink" to="/login">
-                  here
-                </Link>
-              </span>
-            </div>
-          </form>
+            <button type="submit" className="signup__Button">
+              Create Account
+            </button>
+            <span className="formLogin">
+              Already have an account? Login{" "}
+              <Link className="formLink" to="/login">
+                here
+              </Link>
+            </span>
+          </div>
+        </form>
       </div>
     </div>
   );

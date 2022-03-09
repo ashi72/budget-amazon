@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import SignupInput from "../useSignupInput";
 import validateSignUp from "../validateSignUp";
+import "../signup.css"
 
 const Signup = () => {
   const { handleChange, handleSubmit, values, errors } =

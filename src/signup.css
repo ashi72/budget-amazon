@@ -2,12 +2,12 @@
   background-color: #7bafd4;
   padding: 0px 60px;
   border-radius: 10px;
-}
+}*/
 
 h1 {
   color: black;
   text-align: center;
-} */
+} 
 body {
   background-color: #eeeeee;
 }
@@ -37,7 +37,7 @@ input[name="UID"] {
   padding: 10px;
   margin: 8px 0;
 }
-input[name="Name"] {
+input[name="name"] {
   color: #6e7588;
   font-size: 16px;
   line-height: 1;
@@ -47,7 +47,7 @@ input[name="Name"] {
   padding: 10px;
   margin: 8px 0;
 }
-input[name="Password"] {
+input[name="password"] {
   color: #6e7588;
   font-size: 16px;
   line-height: 1;
@@ -57,7 +57,7 @@ input[name="Password"] {
   padding: 10px;
   margin: 8px 0;
 }
-input[name="ConfPassword"] {
+input[name="confpassword"] {
   color: #6e7588;
   font-size: 16px;
   line-height: 1;
@@ -67,7 +67,7 @@ input[name="ConfPassword"] {
   padding: 10px;
   margin: 8px 0;
 }
-input[name="Username"] {
+input[name="username"] {
   color: #6e7588;
   font-size: 16px;
   line-height: 1;
@@ -77,7 +77,7 @@ input[name="Username"] {
   padding: 10px;
   margin: 8px 0;
 }
-input[name="Email"] {
+input[name="email"] {
   color: #6e7588;
   font-size: 16px;
   line-height: 1;

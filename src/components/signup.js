@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SignupInput from "../hooks/useSignupInput";
 import validateSignUp from "../services/validateSignUp";
 import { UserContext } from "../contexts/UserContext";
-
+import "../signup.css";
 const Signup = () => {
   const { handleChange, handleSubmit, values, errors } =
     SignupInput(validateSignUp);

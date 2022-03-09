@@ -1,4 +1,4 @@
-import { ERRORS as ERROR } from "./constants/errors";
+import { ERRORS as ERROR } from "../constants/errors";
 
 export default function validateSignUp(values) {
   let errors = {};

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import productAPI from "../services/addproduct";
+import productAPI from "../services/products";
 
 const useAddProduct = (validate) => {
   const [values, setValues] = useState({
@@ -11,6 +11,7 @@ const useAddProduct = (validate) => {
     shortDesc: "",
     description: "",
     condition: "",
+    seller: "",
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -18,14 +19,13 @@ const useAddProduct = (validate) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrors(validate(values));
-    console.log(errors);
     if (Object.keys(errors).length !== 0) {
       alert("nono");
       return;
     }
     try {
-      const product = await productAPI.addProduct(values);
-      navigate("/", { replace: true });
+      const product = await productAPI.create(values);
+      navigate("/");
     } catch (e) {
       // if (!error.includes(ERROR.WRONG_COMBO)) {
       //   setError(error.concat(ERROR.WRONG_COMBO));

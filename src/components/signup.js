@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import SignupInput from "../hooks/useSignupInput";
 import validateSignUp from "../services/validateSignUp";
 import { UserContext } from "../contexts/UserContext";
-
+import "../signup.css";
+import LabelledInput from "./LabelledInput";
 const Signup = () => {
   const { handleChange, handleSubmit, values, errors } =
     SignupInput(validateSignUp);
@@ -20,44 +21,46 @@ const Signup = () => {
       navigate("/", { replace: true });
     }
   }, [user, navigate]);
-
   return (
     <div className="signup">
       <div className="signup__container">
+        <h1 className="signupwords">Sign up for an account!</h1>
         <form onSubmit={handleSubmit}>
-          <h1>Sign Up</h1>
           <div className="ui form">
             <div className="entry">
-              <input
+              <LabelledInput
                 type="name"
                 name="name"
                 placeholder="Name"
                 value={values.name}
                 onChange={handleChange}
+                label={"Name"}
               />
               {errors.name && (
                 <Typography style={{ color: "red" }}>{errors.name}</Typography>
               )}
             </div>
             <div className="entry">
-              <input
+              <LabelledInput
                 type="UID"
                 name="UID"
                 placeholder="UID"
                 value={values.UID}
                 onChange={handleChange}
+                label={"UID"}
               />
               {errors.UID && (
                 <Typography style={{ color: "red" }}>{errors.UID}</Typography>
               )}
             </div>
             <div className="entry">
-              <input
+              <LabelledInput
                 type="username"
                 name="username"
                 placeholder="Username"
                 value={values.username}
                 onChange={handleChange}
+                label={"Username"}
               />
               {errors.username && (
                 <Typography style={{ color: "red" }}>
@@ -66,24 +69,26 @@ const Signup = () => {
               )}
             </div>
             <div className="entry">
-              <input
+              <LabelledInput
                 type="text"
                 name="email"
                 placeholder="Email"
                 value={values.email}
                 onChange={handleChange}
+                label={"Email"}
               />
               {errors.email && (
                 <Typography style={{ color: "red" }}>{errors.email}</Typography>
               )}
             </div>
             <div className="entry">
-              <input
+              <LabelledInput
                 type="Password"
                 name="password"
                 placeholder="Password"
                 value={values.password}
                 onChange={handleChange}
+                label={"Password"}
               />
               {errors.password && (
                 <Typography style={{ color: "red" }}>
@@ -92,12 +97,13 @@ const Signup = () => {
               )}
             </div>
             <div className="entry">
-              <input
+              <LabelledInput
                 type="Password"
                 name="confpassword"
                 placeholder="Confirm Password"
                 value={values.confpassword}
                 onChange={handleChange}
+                label={"Confirm Password"}
               />
             </div>
             {errors.confpassword && (

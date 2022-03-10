@@ -26,8 +26,13 @@ const NavBar = ({ onLogout }) => {
               <u>Sign Out</u>
             </a>
           )}
-          {user && <Link to="/addproduct"> Add a product! </Link>}
         </div>
+        {user && (
+          <Link to="/addproduct" className="navbaraddprod">
+            {" "}
+            Add a product!{" "}
+          </Link>
+        )}
       </div>
     </nav>
   );

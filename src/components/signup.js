@@ -27,91 +27,96 @@ const Signup = () => {
         <h1 className="signupwords">Sign up for an account!</h1>
         <form onSubmit={handleSubmit}>
           <div className="ui form">
-            <div className="entry">
-              <LabelledInput
-                type="name"
-                name="name"
-                placeholder="Name"
-                value={values.name}
-                onChange={handleChange}
-                label={"Name"}
-              />
-              {errors.name && (
-                <Typography style={{ color: "red" }}>{errors.name}</Typography>
-              )}
-            </div>
-            <div className="entry">
-              <LabelledInput
-                type="UID"
-                name="UID"
-                placeholder="UID"
-                value={values.UID}
-                onChange={handleChange}
-                label={"UID"}
-              />
-              {errors.UID && (
-                <Typography style={{ color: "red" }}>{errors.UID}</Typography>
-              )}
-            </div>
-            <div className="entry">
-              <LabelledInput
-                type="username"
-                name="username"
-                placeholder="Username"
-                value={values.username}
-                onChange={handleChange}
-                label={"Username"}
-              />
-              {errors.username && (
+            <div className="labelled-input">
+              <div className="entry">
+                <input
+                  type="name"
+                  name="name"
+                  placeholder="Name"
+                  value={values.name}
+                  onChange={handleChange}
+                  label={"Name"}
+                />
+                {errors.name && (
+                  <Typography style={{ color: "red" }}>
+                    {errors.name}
+                  </Typography>
+                )}
+              </div>
+              <div className="entry">
+                <input
+                  type="UID"
+                  name="UID"
+                  placeholder="UID"
+                  value={values.UID}
+                  onChange={handleChange}
+                  label={"UID"}
+                />
+                {errors.UID && (
+                  <Typography style={{ color: "red" }}>{errors.UID}</Typography>
+                )}
+              </div>
+              <div className="entry">
+                <input
+                  type="username"
+                  name="username"
+                  placeholder="Username"
+                  value={values.username}
+                  onChange={handleChange}
+                  label={"Username"}
+                />
+                {errors.username && (
+                  <Typography style={{ color: "red" }}>
+                    {errors.username}
+                  </Typography>
+                )}
+              </div>
+              <div className="entry">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  value={values.email}
+                  onChange={handleChange}
+                  label={"Email"}
+                />
+                {errors.email && (
+                  <Typography style={{ color: "red" }}>
+                    {errors.email}
+                  </Typography>
+                )}
+              </div>
+              <div className="entry">
+                <input
+                  type="Password"
+                  name="password"
+                  placeholder="Password"
+                  value={values.password}
+                  onChange={handleChange}
+                  label={"Password"}
+                />
+                {errors.password && (
+                  <Typography style={{ color: "red" }}>
+                    {errors.password}
+                  </Typography>
+                )}
+              </div>
+              <div className="entry">
+                <input
+                  type="Password"
+                  name="confpassword"
+                  placeholder="Confirm Password"
+                  value={values.confpassword}
+                  onChange={handleChange}
+                  label={"Confirm Password"}
+                />
+              </div>
+              {errors.confpassword && (
                 <Typography style={{ color: "red" }}>
-                  {errors.username}
+                  {errors.confpassword}
                 </Typography>
               )}
             </div>
-            <div className="entry">
-              <LabelledInput
-                type="text"
-                name="email"
-                placeholder="Email"
-                value={values.email}
-                onChange={handleChange}
-                label={"Email"}
-              />
-              {errors.email && (
-                <Typography style={{ color: "red" }}>{errors.email}</Typography>
-              )}
-            </div>
-            <div className="entry">
-              <LabelledInput
-                type="Password"
-                name="password"
-                placeholder="Password"
-                value={values.password}
-                onChange={handleChange}
-                label={"Password"}
-              />
-              {errors.password && (
-                <Typography style={{ color: "red" }}>
-                  {errors.password}
-                </Typography>
-              )}
-            </div>
-            <div className="entry">
-              <LabelledInput
-                type="Password"
-                name="confpassword"
-                placeholder="Confirm Password"
-                value={values.confpassword}
-                onChange={handleChange}
-                label={"Confirm Password"}
-              />
-            </div>
-            {errors.confpassword && (
-              <Typography style={{ color: "red" }}>
-                {errors.confpassword}
-              </Typography>
-            )}
-
             <button type="submit" className="signup__Button">
               Create Account
             </button>

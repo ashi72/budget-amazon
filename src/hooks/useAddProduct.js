@@ -10,6 +10,7 @@ const useAddProduct = (validate) => {
     stock: "",
     shortDesc: "",
     description: "",
+    condition: "",
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();

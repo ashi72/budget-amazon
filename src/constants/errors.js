@@ -21,4 +21,5 @@ export const ERRORS = {
   STOCK_INVALID: "Stock invalid!",
   SHORT_DESC_REQ: "You must input a short description for your product!",
   DESC_REQ: "You must input a longer description for your product as well!",
+  CONDITION_REQ: "You must input what condition your product is in!",
 };

@@ -15,5 +15,7 @@ export default function validateAddProduct(values) {
 
   if (!values.description) errors.description = ERROR.DESC_REQ;
 
+  if (!values.condition) errors.condition = ERROR.CONDITION_REQ;
+
   return errors;
 }

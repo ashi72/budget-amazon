@@ -17,7 +17,12 @@ router.post("/login", async (request, response) => {
     });
   }
 
-  const token = webtoken.sign({ username: user.username }, "testtestkey");
+  const tokenObjects = {
+    username: user.username,
+    id: user._id,
+  };
+
+  const token = webtoken.sign(tokenObjects, "test");
 
   response
     .status(200)

@@ -1,28 +1,53 @@
+const webtoken = require("jsonwebtoken");
 const express = require("express");
 const Product = require("../models/Product");
+const User = require("../models/User");
 const router = express.Router();
 
 var ObjectId = require("mongoose").Types.ObjectId;
 
+const getTokenFrom = (req) => {
+  const auth = req.get("authorization");
+  if (auth && auth.toLowerCase().startsWith("bearer ")) {
+    return auth.substring(7);
+  }
+  return null;
+};
+
 router.post("/createProductListing", async (req, res) => {
-  Product.findOne({ seller: req.body.seller, name: req.body.name }).then(
-    (product) => {
-      if (product) {
-        return res.status(204).send({
-          message: "The product already exists under this name",
-        });
-      } else {
-        const newProduct = new Product(req.body);
-        newProduct.save().catch((err) => {
+  const token = getTokenFrom(req);
+  const decodedToken = webtoken.verify(token, "test");
+  if (!decodedToken.id)
+    return res.status(401).json({ error: "token missing or invalid" });
+
+  const user = await User.findById(decodedToken.id);
+  if (!user) res.status(404).send({ message: "User not found in database" });
+
+  Product.findOne({
+    seller: user._id,
+    name: req.body.name,
+  }).then((product) => {
+    if (product) {
+      return res.status(204).send({
+        message: "The product already exists under this name",
+      });
+    } else {
+      const newProduct = new Product({ ...req.body, seller: user._id });
+      newProduct
+        .save()
+        .then((item) => {
+          user.products = user.products.concat(item.toObject()._id);
+          user.save();
+        })
+        .catch((err) => {
           return res.status(500).send({
             message: "Internal server error, please try again later!",
             error: err,
           });
         });
-        res.status(201).send(newProduct);
-      }
+      res.status(201).send(newProduct);
     }
-  );
+  });
 });
 
 router.get("/fetchProduct/:product_id", async (req, res) => {

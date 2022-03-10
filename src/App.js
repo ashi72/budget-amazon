@@ -10,14 +10,18 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import { UserContext } from "./contexts/UserContext";
+import productAPI from "./services/products";
 
 function App() {
   const [user, setUser] = useState(null);
   useEffect(() => {
     const found = JSON.parse(localStorage.getItem("user"));
-    if (found)
-      if (Date.now() > found.expiry) localStorage.removeItem("user");
-      else setUser(JSON.parse(localStorage.getItem("user")));
+    if (found) {
+      // if (Date.now() > found.expiry) localStorage.removeItem("user");
+      // else setUser(JSON.parse(localStorage.getItem("user")));
+      setUser(found);
+      productAPI.setToken(found.token);
+    }
   }, []);
 
   const logout = () => {

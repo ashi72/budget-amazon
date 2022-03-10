@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import loginAPI from "../services/login.js";
+import productAPI from "../services/products";
 
 import ErrorMessage from "./ErrorMessage";
 import LabelledInput from "./LabelledInput";
@@ -30,7 +31,7 @@ const SignIn = () => {
         username,
         password,
       });
-      setUsername("");
+      productAPI.setToken(user.token);
       setPassword("");
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/", { replace: true });

@@ -85,6 +85,16 @@ const AddProduct = () => {
                 onChange={handleChange}
               />
             </div>
+            <div className="field">
+              <label className="label">Condition: </label>
+              <input
+                className="input"
+                type="text"
+                name="condition"
+                value={values.condition}
+                onChange={handleChange}
+              />
+            </div>
             <div className="field is-clearfix">
               <button
                 className="button is-primary is-outlined is-pulled-right"

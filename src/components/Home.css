@@ -1,0 +1,55 @@
+.searchbar {
+  padding-top: 30px;
+  font-size: 16px;
+  text-align: center;
+}
+input[name="searchbarname"] {
+  color: #6e7588;
+  font-size: 16px;
+  line-height: 1;
+  height: 24px;
+  font-size: 16px;
+  width: 75%;
+  padding: 20px 10px;
+  vertical-align: middle;
+  margin: 8px 0;
+  size: 1000px;
+  border-radius: 15px;
+}
+
+nav {
+  background-color: #2774ae;
+  height: 80px;
+}
+
+.navbarinfo {
+  float: right;
+}
+
+.BruinMarketLogo {
+  padding-bottom: 10px;
+  position: absolute;
+}
+.navaccountdisplay {
+  padding-top: 10px;
+  padding-left: 1100px;
+  color: #ffd100;
+  top: 0px;
+  right: 40px;
+  position: absolute;
+}
+
+.LogoAlign {
+  text-align: center;
+  padding-top: 100px;
+}
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.linktocatalog {
+  text-align: center;
+  align-items: center;
+  padding-top: 10px;
+}

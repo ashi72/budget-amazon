@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 const Rating = ({ user, value, text, color }) => {
     return (
         <div className='rating'>
-            hello
             <span>
                 <i
                     style={{ color }}
@@ -76,7 +75,7 @@ Rating.defaultProps = {
 }
 
 Rating.propTypes = {
-    user: PropTypes.sting.isRequired,
+    user: PropTypes.string.isRequired,
     value: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     color: PropTypes.string,

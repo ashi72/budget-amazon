@@ -36,7 +36,7 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
         <NavBar onLogout={logout} />
-        <Routes>
+        <Routes> 
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<Signup />} />

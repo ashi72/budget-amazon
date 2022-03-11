@@ -119,9 +119,14 @@ const NavBar = ({ onLogout }) => {
           <div className={classes.grow} />
 
           <div className="navaccountdisplay">
-            <Link to={`/profile/${user?.username}`}>
+            <Typography
+              color="inherit"
+              className={classes.accountlink}
+              component={Link}
+              to={`/profile/${user?.username}`}
+            >
               Hello, {user?.name ?? "Guest Bruin"}
-            </Link>
+            </Typography>
             {"   "}
             {!user && (
               <Typography

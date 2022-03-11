@@ -25,11 +25,11 @@ const Home = () => {
         <img src={Logo} alt="Bruin Market Logo" className="LogoImage" />
       </div>
       <div className="searchbar">
-        <form onSubmit={handleSearchSubmit}>
+        <form onSubmit={handleSearchSubmit} className="searchbar">
           <input
             type="text"
             placeholder="search for items here"
-            name="searchbarname"
+            name="searchbarnamehome"
             value={search}
             onChange={handleSearchChange}
           />

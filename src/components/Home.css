@@ -17,6 +17,19 @@ input[name="searchbarname"] {
   border-radius: 15px;
 }
 
+input[name="searchbarnamehome"] {
+  color: #6e7588;
+  font-size: 16px;
+  line-height: 1;
+  height: 24px;
+  font-size: 16px;
+  padding: 20px 10px;
+  vertical-align: middle;
+  margin: 8px 0;
+  size: 1000px;
+  border-radius: 15px;
+  text-align: center;
+}
 nav {
   background-color: #2774ae;
   height: 80px;
@@ -31,7 +44,6 @@ nav {
   position: absolute;
 }
 .navaccountdisplay {
-  padding-top: 10px;
   padding-left: 1100px;
   color: #ffd100;
   top: 0px;

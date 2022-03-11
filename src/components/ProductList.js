@@ -37,7 +37,7 @@ const ProductList = () => {
     <>
       <div className="hero is-primary">
         <div className="hero-body container">
-          <h4 className="title">Our Products</h4>
+          <h1 className="title">Our Products</h1>
         </div>
       </div>
       <br />

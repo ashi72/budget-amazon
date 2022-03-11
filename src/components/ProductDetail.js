@@ -27,6 +27,8 @@ const ProductDetail = () => {
                       "https://bulma.io/images/placeholders/128x128.png"
                     }
                     alt={product.shortDesc}
+                    width="512"
+                    height="512"
                   />
                 </figure>
               </div>

@@ -13,4 +13,7 @@ const Product = new Schema({
     condition: String
 })
 
+Product iphone = new Product();
+
+
 module.exports = mongoose.model('product', Product)

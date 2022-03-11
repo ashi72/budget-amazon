@@ -5,9 +5,11 @@ import "./App.css";
 import Home from "./components/Home";
 import Signup from "./components/signup";
 import SignIn from "./components/SignIn";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
+import ProductList from "./components/ProductList"
+import ProductItem from "./components/ProductItem"
 import { UserContext } from "./contexts/UserContext";
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/products" element={<ProductList />} />
+          <Route path="/product" element={<ProductItem />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -41,7 +41,7 @@ const NavBar = ({ onLogout }) => {
                     <div>
                         <Link to="/Products" className={classes.navlinks} color='inherit'> Products </Link>
 
-                        <Typography component={Link} to="/" className={classes.navlinks} color='inherit'> Make Review </Typography>
+                        <Typography component={Link} to="/review" className={classes.navlinks} color='inherit'> Make Review </Typography>
 
                         <Typography component={Link} to="/" className={classes.navlinks} color='inherit'> info </Typography>
                     </div>

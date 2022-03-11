@@ -5,19 +5,15 @@ import "./App.css";
 import Home from "./components/Home";
 import Signup from "./components/signup";
 import SignIn from "./components/SignIn";
-<<<<<<< HEAD
 import NavBar from "./components/NavBar/NavBar";
 import AddProduct from "./components/AddProduct";
-=======
-import AddProduct from "./components/AddProduct";
-import NavBar from "./components/NavBar";
->>>>>>> 6fa614d9e243a6d7117900af799b7b43d412bcc5
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import { UserContext } from "./contexts/UserContext";
 import productAPI from "./services/products";
+import review from "./components/review";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -48,6 +44,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/review" element={<review />} />
         </Routes>
         <Footer />
       </BrowserRouter>

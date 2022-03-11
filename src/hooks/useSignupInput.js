@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import registerAPI from "../services/register";
+import userAPI from "../services/users";
 
 const SignupInput = (validate) => {
   const [values, setValues] = useState({
@@ -24,7 +24,7 @@ const SignupInput = (validate) => {
       return;
     }
     try {
-      const user = await registerAPI.register(values);
+      const user = await userAPI.register(values);
       navigate("/", { replace: true });
     } catch (e) {
       // if (!error.includes(ERROR.WRONG_COMBO)) {

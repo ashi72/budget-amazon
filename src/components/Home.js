@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <div className="LogoAlign">
-        <img src={Logo} alt="Bruin Market Logo" />
+        <img src={Logo} alt="Bruin Market Logo" className="LogoImage" />
       </div>
       <div className="searchbar">
         <input
@@ -19,14 +19,12 @@ const Home = () => {
         />
       </div>
       <div className="linktocatalog">
-        <a href="#" className="linktocatalog">
-          {user && (
-            <Link to="/addproduct" className="navbaraddprod">
-              {" "}
-              Add a product!{" "}
-            </Link>
-          )}
-        </a>
+        {user && (
+          <Link to="/addproduct" className="navbaraddprod">
+            {" "}
+            Add a product!{" "}
+          </Link>
+        )}
       </div>
     </>
   );

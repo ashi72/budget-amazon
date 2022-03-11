@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import validateAddProduct from "../services/validateAddProduct";
 import useAddProduct from "../hooks/useAddProduct";
+import "./AddProduct.css";
 
 const AddProduct = () => {
   const { handleChange, handleSubmit, values, errors } =
@@ -23,12 +24,12 @@ const AddProduct = () => {
     <>
       <div className="hero is-primary ">
         <div className="hero-body container">
-          <h4 className="title">Add Product</h4>
+          <h1 className="title">Add Product</h1>
         </div>
       </div>
       <br />
       <br />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="addprodform">
         <div className="columns is-mobile is-centered">
           <div className="column is-one-third">
             <div className="field">

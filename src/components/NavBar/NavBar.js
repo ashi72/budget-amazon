@@ -89,7 +89,7 @@ const NavBar = ({ onLogout }) => {
 
           <div className="navaccountdisplay">
             <Link to={`/profile/${user?.username}`}>
-              hello {user?.name ?? "Guest Bruin"}
+              Hello, {user?.name ?? "Guest Bruin"}
             </Link>
             {"   "}
             {!user && (

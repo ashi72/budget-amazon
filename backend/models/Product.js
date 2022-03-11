@@ -13,11 +13,4 @@ const Product = new Schema({
   condition: String,
 });
 
-<<<<<<< HEAD
-Product iphone = new Product();
-
-
-module.exports = mongoose.model('product', Product)
-=======
 module.exports = mongoose.model("product", Product);
->>>>>>> 55e930c3bb54029ec7b192c9593eb5c832176ef6

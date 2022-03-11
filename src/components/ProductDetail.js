@@ -43,6 +43,7 @@ const ProductDetail = () => {
                 ) : (
                   <small className="has-text-danger">Out Of Stock</small>
                 )}
+                <div> Condition: {product.condition}</div>
                 <div className="is-clearfix">
                   <button
                     className="button is-small is-outlined is-primary   is-pulled-right"
@@ -52,6 +53,9 @@ const ProductDetail = () => {
                   </button>
                 </div>
               </div>
+
+              <lebel> Description:</lebel>
+              <div>{product.description}</div>
             </div>
           </div>
         </div>

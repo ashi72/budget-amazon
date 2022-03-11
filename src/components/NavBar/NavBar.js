@@ -88,7 +88,7 @@ const NavBar = ({ onLogout }) => {
           <div className={classes.grow} />
 
           <div className="navaccountdisplay">
-            hello {user?.name ?? "Guest Bruin"}
+            Hello, {user?.name ?? "Guest Bruin"}
             {"   "}
             {!user && (
               <Typography

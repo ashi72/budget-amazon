@@ -85,8 +85,20 @@ Bruin Market is a Bruin-for-Bruin marketplace. It gives UCLA students a platform
 
 Bruin Market has several package dependencies not installed by default in our package.json file. Run the following command to install all needed packages
 
-### `npm install`
+```
+npm install
+```
 
-### Then run the following command to open Bruin Market in your preferred browser
+Run the following command to open Bruin Market in your preferred browser
 
-### `npm start`
+```
+npm start
+```
+
+### Starting the server
+
+Run the following command to connect with the backend server
+
+```
+Node server.js
+```

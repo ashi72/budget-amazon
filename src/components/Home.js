@@ -36,12 +36,12 @@ const Home = () => {
         </form>
       </div>
       <div className="linktocatalog">
-        {user && (
-          <Link to="/addproduct" className="navbaraddprod">
+        {
+          <Link to="/Products" className="navbaraddprod">
             {" "}
-            Add a product!{" "}
+            Browse our products!{" "}
           </Link>
-        )}
+        }
       </div>
     </>
   );

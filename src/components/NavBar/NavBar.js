@@ -59,20 +59,51 @@ const NavBar = ({ onLogout }) => {
           </Typography>
 
           <div>
-            <Link to="/Products" className={classes.navlinks} color="inherit">
-              {" "}
-              Products{" "}
-            </Link>
+            {user && (
+              <Typography
+                component={Link}
+                to="/addproduct"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Add Product{" "}
+              </Typography>
+            )}
+            {!user && (
+              <Typography
+                component={Link}
+                to="/register"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Add Product{" "}
+              </Typography>
+            )}
 
-            <Typography
-              component={Link}
-              to="/review"
-              className={classes.navlinks}
-              color="inherit"
-            >
-              {" "}
-              Make Review{" "}
-            </Typography>
+            {user && (
+              <Typography
+                component={Link}
+                to="/review"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Make Review{" "}
+              </Typography>
+            )}
+            {!user && (
+              <Typography
+                component={Link}
+                to="/register"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Make Review{" "}
+              </Typography>
+            )}
 
             <Typography
               component={Link}
@@ -81,7 +112,7 @@ const NavBar = ({ onLogout }) => {
               color="inherit"
             >
               {" "}
-              Info{" "}
+              About Us{" "}
             </Typography>
           </div>
 

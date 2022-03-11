@@ -17,5 +17,7 @@ export default function validateAddProduct(values) {
 
   if (!values.condition) errors.condition = ERROR.CONDITION_REQ;
 
+  if (!values.imageURL) errors.imageURL = ERROR.IMAGE_URL_REQ;
+
   return errors;
 }

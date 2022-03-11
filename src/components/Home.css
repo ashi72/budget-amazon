@@ -44,9 +44,10 @@ nav {
   padding-top: 100px;
 }
 .Footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
+  left: 0;
 }
 .linktocatalog {
   text-align: center;
@@ -54,5 +55,13 @@ nav {
   padding-top: 10px;
 }
 .navbaraddprod {
-  color: black;
+  color: #2774ae;
+  margin-top: 10px;
+}
+.signoutwords {
+  color: white;
+}
+.LogoImage {
+  height: 400px;
+  width: 400px;
 }

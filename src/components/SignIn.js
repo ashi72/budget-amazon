@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import loginAPI from "../services/login.js";
+import userAPI from "../services/users.js";
 import productAPI from "../services/products";
 
 import ErrorMessage from "./ErrorMessage";
@@ -26,7 +26,7 @@ const SignIn = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const user = await loginAPI.login({
+      const user = await userAPI.login({
         username,
         password,
       });

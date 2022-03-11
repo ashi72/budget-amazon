@@ -11,6 +11,7 @@ const Product = new Schema({
   price: Number,
   tags: Array,
   condition: String,
+  imageURL: String,
 });
 
 module.exports = mongoose.model("product", Product);

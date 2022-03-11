@@ -14,7 +14,7 @@ import ProductDetail from "./components/ProductDetail";
 import Profile from "./components/Profile";
 import { UserContext } from "./contexts/UserContext";
 import productAPI from "./services/products";
-import Review from "./components/review";
+import Review from "./components/Review";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,7 +37,7 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
         <NavBar onLogout={logout} />
-        <Routes> 
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<Signup />} />

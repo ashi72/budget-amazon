@@ -4,11 +4,13 @@ import { Link, useParams } from "react-router-dom";
 import userAPI from "../services/users";
 import { UserContext } from "../contexts/UserContext";
 import productAPI from "../services/products";
+import reviewAPI from "../services/reviews";
 import ProductItem from "./ProductItem";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [products, setProducts] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const { user } = useContext(UserContext);
   const { username } = useParams();
 
@@ -28,6 +30,12 @@ const Profile = () => {
     });
   }, [profile, username]);
 
+  useEffect(() => {
+    reviewAPI.get(username).then((reviews) => {
+      setReviews(reviews.reviews);
+    });
+  }, [profile, username]);
+
   return (
     <>
       {!user && <div>loading user...</div>}
@@ -43,6 +51,17 @@ const Profile = () => {
               <div className="column">
                 <span className="title has-text-grey-light">
                   No products found!
+                </span>
+              </div>
+            )}
+          </div>
+          <div>
+            {reviews && reviews.length ? (
+              reviews.map((review, index) => <p key={index}>{review.review}</p>)
+            ) : (
+              <div className="column">
+                <span className="title has-text-grey-light">
+                  No reviews found!
                 </span>
               </div>
             )}

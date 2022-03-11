@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
+import Profile from "./components/Profile";
 import { UserContext } from "./contexts/UserContext";
 import productAPI from "./services/products";
 import review from "./components/review";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/review" element={<review />} />
+          <Route path="/profile/:username" element={<Profile />} />
         </Routes>
         <Footer />
       </BrowserRouter>

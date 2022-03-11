@@ -88,7 +88,9 @@ const NavBar = ({ onLogout }) => {
           <div className={classes.grow} />
 
           <div className="navaccountdisplay">
-            hello {user?.name ?? "Guest Bruin"}
+            <Link to={`/profile/${user?.username}`}>
+              hello {user?.name ?? "Guest Bruin"}
+            </Link>
             {"   "}
             {!user && (
               <Typography

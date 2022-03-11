@@ -69,10 +69,31 @@ router.post("/register", async (req, res) => {
   });
 });
 
-router.get("/fetch/:email", function (req, res) {
+router.get("/fetchWithEmail/:email", function (req, res) {
   User.findOne({
     // search by an email
     $or: [{ email: req.params.email }],
+  })
+    .then((user) => {
+      if (!user) {
+        return res.status(200).send({
+          message: "User not found",
+        });
+      }
+      return res.status(200).send({ user, message: "User found!" });
+    })
+    .catch((err) => {
+      return res.status(500).send({
+        message: "Internal server error, please try again later!",
+        error: err,
+      });
+    });
+});
+
+router.get("/fetchWithUsername/:username", function (req, res) {
+  User.findOne({
+    // search by a username
+    $or: [{ username: req.params.username }],
   })
     .then((user) => {
       if (!user) {

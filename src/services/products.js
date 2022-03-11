@@ -19,4 +19,14 @@ const create = async (information) => {
   return response.data;
 };
 
-export default { setToken, create };
+const get = async (id) => {
+  const response = await axios.get(baseUrl + `/fetchProduct/${id}`);
+  return response.data;
+};
+
+const getAll = async () => {
+  const response = await axios.get(baseUrl + "/fetchAllProducts");
+  return response.data.products;
+};
+
+export default { setToken, create, get, getAll };

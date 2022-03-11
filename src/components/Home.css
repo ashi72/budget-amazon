@@ -54,5 +54,9 @@ nav {
   padding-top: 10px;
 }
 .navbaraddprod {
-  color: black;
+  color: #2774ae;
+  margin-top: 10px;
+}
+.signoutwords {
+  color: white;
 }

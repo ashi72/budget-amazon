@@ -20,11 +20,25 @@ body {
   font-size: 16px;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
+.entry :placeholder-shown {
+  height: 32px;
+  padding: 24px 16px 4px 14px;
+  font-size: 16px;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  vertical-align: center;
+}
 .signup {
   margin-top: 0%;
   margin-bottom: 0%;
 }
 
+.entry:focus-within ::placeholder,
+.entry .filled {
+  transform: translate(0, 12px) scale(0.8);
+}
+.entry:focus-within label {
+  color: #000000;
+}
 .formLogin {
   margin-top: 100px;
   text-align: center;
@@ -34,5 +48,5 @@ body {
   text-align: center;
 }
 .signupwords {
-  margin-top: 20px;
+  margin-top: 100px;
 }

@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +67,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+
+# Bruin Market
+
+### Contributors
+
+Aaron Shi, Andrew Barrington, Brandon Vuong, and Jay Jay Phoemphoolsinchai
+
+### About
+
+Bruin Market is a Bruin-for-Bruin marketplace. It gives UCLA students a platform to buy and sell goods with one another
+
+## Installing and Running Bruin Market
+
+### Running Bruin Market Locally
+
+Bruin Market has several package dependencies not installed by default in our package.json file. Run the following command to install all needed packages
+
+### `npm install`
+
+### Then run the following command to open Bruin Market in your preferred browser
+
+### `npm start`

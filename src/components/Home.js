@@ -37,7 +37,7 @@ const Home = () => {
       </div>
       <div className="linktocatalog">
         {
-          <Link to="/Products" className="navbaraddprod">
+          <Link to="/products" className="navbaraddprod">
             {" "}
             Browse our products!{" "}
           </Link>

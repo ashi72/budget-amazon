@@ -73,7 +73,7 @@ const NavBar = ({ onLogout }) => {
             {!user && (
               <Typography
                 component={Link}
-                to="/register"
+                to="/login"
                 className={classes.navlinks}
                 color="inherit"
               >
@@ -96,7 +96,7 @@ const NavBar = ({ onLogout }) => {
             {!user && (
               <Typography
                 component={Link}
-                to="/register"
+                to="/login"
                 className={classes.navlinks}
                 color="inherit"
               >

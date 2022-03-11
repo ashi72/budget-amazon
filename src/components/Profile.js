@@ -22,7 +22,7 @@ const Profile = () => {
     productAPI.getAll().then((products) => {
       setProducts(
         products.filter((product) => {
-          return product.seller === profile._id;
+          return product.seller === profile?._id;
         })
       );
     });

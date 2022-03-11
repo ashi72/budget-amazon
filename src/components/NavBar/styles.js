@@ -29,6 +29,16 @@ export default makeStyles((theme) => ({
       borderBottom: "1px solid white",
     },
   },
+  accountlink: {
+    textDecoration: "none",
+    color: "white",
+    fontSize: "16px",
+    marginRight: theme.spacing(2),
+    "&:hover": {
+      color: "#ffd100",
+      borderBottom: "1px solid white",
+    },
+  },
   navlinks: {
     textDecoration: "none",
     color: "white",

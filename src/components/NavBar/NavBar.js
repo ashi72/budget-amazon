@@ -59,20 +59,51 @@ const NavBar = ({ onLogout }) => {
           </Typography>
 
           <div>
-            <Link to="/Products" className={classes.navlinks} color="inherit">
-              {" "}
-              Products{" "}
-            </Link>
+            {user && (
+              <Typography
+                component={Link}
+                to="/addproduct"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Add Product{" "}
+              </Typography>
+            )}
+            {!user && (
+              <Typography
+                component={Link}
+                to="/login"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Add Product{" "}
+              </Typography>
+            )}
 
-            <Typography
-              component={Link}
-              to="/review"
-              className={classes.navlinks}
-              color="inherit"
-            >
-              {" "}
-              Make Review{" "}
-            </Typography>
+            {user && (
+              <Typography
+                component={Link}
+                to="/review"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Make Review{" "}
+              </Typography>
+            )}
+            {!user && (
+              <Typography
+                component={Link}
+                to="/login"
+                className={classes.navlinks}
+                color="inherit"
+              >
+                {" "}
+                Make Review{" "}
+              </Typography>
+            )}
 
             <Typography
               component={Link}
@@ -81,16 +112,21 @@ const NavBar = ({ onLogout }) => {
               color="inherit"
             >
               {" "}
-              Info{" "}
+              About Us{" "}
             </Typography>
           </div>
 
           <div className={classes.grow} />
 
           <div className="navaccountdisplay">
-            <Link to={`/profile/${user?.username}`}>
+            <Typography
+              color="inherit"
+              className={classes.accountlink}
+              component={Link}
+              to={`/profile/${user?.username}`}
+            >
               Hello, {user?.name ?? "Guest Bruin"}
-            </Link>
+            </Typography>
             {"   "}
             {!user && (
               <Typography

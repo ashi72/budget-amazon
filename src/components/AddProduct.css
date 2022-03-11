@@ -1,0 +1,26 @@
+.input {
+  height: 30px;
+  flex: 0 0 200px;
+  width: 492.8px;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: right;
+  width: 500px;
+  line-height: 26px;
+}
+.textarea {
+  flex: 0 0 200px;
+  width: 492.8px;
+}
+.addprodform {
+  margin-top: -50px;
+  position: relative;
+}
+.title {
+  text-align: center;
+  margin-top: 30px;
+}

@@ -14,7 +14,7 @@ import ProductDetail from "./components/ProductDetail";
 import Profile from "./components/Profile";
 import { UserContext } from "./contexts/UserContext";
 import productAPI from "./services/products";
-import review from "./components/review";
+import Review from "./components/review";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -45,7 +45,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/review" element={<review />} />
+          <Route path="/review" element={<Review />} />
           <Route path="/profile/:username" element={<Profile />} />
         </Routes>
         <Footer />

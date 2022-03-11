@@ -1,10 +1,10 @@
 import "./Home.css";
-import BruinMarketLogo from "../Bruin_Market_Home.png";
+import Logo from "../assets/commerce.png";
 const Home = () => {
   return (
     <>
       <div className="LogoAlign">
-        <img src={BruinMarketLogo} alt="Bruin Market Logo" />
+        <img src={Logo} alt="Bruin Market Logo" />
       </div>
       <div className="searchbar">
         <input

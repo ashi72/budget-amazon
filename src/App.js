@@ -5,12 +5,8 @@ import "./App.css";
 import Home from "./components/Home";
 import Signup from "./components/signup";
 import SignIn from "./components/SignIn";
-<<<<<<< HEAD
 import NavBar from "./components/NavBar/NavBar";
-=======
 import AddProduct from "./components/AddProduct";
-import NavBar from "./components/NavBar";
->>>>>>> 55e930c3bb54029ec7b192c9593eb5c832176ef6
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import ProductList from "./components/ProductList"

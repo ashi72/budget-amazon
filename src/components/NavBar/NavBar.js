@@ -32,26 +32,42 @@ const NavBar = ({ onLogout }) => {
 
     return (
         <>
-            <AppBar position="fixed" className={classes.appBar} style={{ backgroundColor: 'Blue' , color: 'Yellow'}}>
+            <AppBar position="fixed" className={classes.appBar} >
                 <Toolbar>
                     <Typography component={Link} to="/" variant="h6" className={classes.title} color = 'inherit'>
                         <img src={logo} alt="Bruin Market" height="25px" className={classes.image} /> Bruin Market
-              </Typography>
+                    </Typography>
+
+                    <div>
+                        <Link to="/Products" className={classes.navlinks} color='inherit'> Products </Link>
+
+                        <Typography component={Link} to="/" className={classes.navlinks} color='inherit'> Make Review </Typography>
+
+                        <Typography component={Link} to="/" className={classes.navlinks} color='inherit'> info </Typography>
+                    </div>
+
                     <div className={classes.grow} />
                     
-                    <div className={classes.navlinks} >
-                        {!user && <Link to="/login">'Log In  '</Link>}
-
-
-                        {!user && <Link to="/register"> 'Sign Up  ' </Link> }
-
-
+                    
+                    <div className="navaccountdisplay">
+                       
+                        hello {user?.name ?? "Guest Bruin"}{"   "}
+                        
+                            {!user && <Typography component={Link} to="/login" className={classes.link} color='inherit'> login </Typography>} 
+                            {!user && <Typography component={Link} to="/register" className={classes.link} color='inherit'> Signup </Typography>}
                             {user && (
                                 <a onClick={onLogout}>
                                     <u>Sign Out</u>
                                 </a>
                             )}
-                        </div>
+                        {user && (
+                            <Link to="/addproduct" className="navbaraddprod">
+                                {" "}
+                                Add a product!{" "}
+                            </Link>
+                        )}
+                        
+                    </div>
                 </Toolbar>
             </AppBar>
         </>

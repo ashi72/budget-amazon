@@ -8,7 +8,9 @@ export default makeStyles((theme) => ({
     borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+        marginLeft: drawerWidth,
+        backgroundColor: 'Blue',
+      color: 'Yellow',
     },
   },
   title: {
@@ -20,16 +22,22 @@ export default makeStyles((theme) => ({
     link: {
         textDecoration: "none",
         color: "white",
-        fontSize: "20px",
-        marginLeft: theme.spacing(20),
+        fontSize: "14px",
+        marginRight: theme.spacing(2),
         "&:hover": {
             color: "yellow",
             borderBottom: "1px solid white",
         },
     },
     navlinks: {
-        marginLeft: theme.spacing(10),
-        display: "flex",
+        textDecoration: "none",
+        color: "white",
+        fontSize: "25px",
+        marginRight: theme.spacing(10),
+        "&:hover": {
+            color: "yellow",
+            borderBottom: "1px solid white",
+        },
     },
   image: {
     marginRight: '10px',

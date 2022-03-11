@@ -8,7 +8,8 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const { state } = useLocation();
-  const { query } = state;
+  let query;
+  if (state) query = state.query;
 
   useEffect(() => {
     if (query) setSearch(query);

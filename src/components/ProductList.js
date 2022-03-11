@@ -2,17 +2,22 @@ import React, { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
 
 import productAPI from "../services/products";
+import { useLocation } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const { state } = useLocation();
+  const { query } = state;
+
   useEffect(() => {
+    if (query) setSearch(query);
     productAPI.getAll().then((products) => {
       setProducts(
         products.filter((product) => {
           const productName = product?.name?.toLowerCase();
           // TODO: Remove condition once database has been flushed
-          if (productName) return productName.includes(search);
+          if (productName) return productName.includes(search.toLowerCase());
           return true;
         })
       );
@@ -20,6 +25,7 @@ const ProductList = () => {
   }, [search]);
 
   const handleSearchChange = (event) => {
+    event.preventDefault();
     setSearch(event.target.value.toLowerCase());
   };
 

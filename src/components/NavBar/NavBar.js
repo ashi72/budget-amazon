@@ -107,7 +107,7 @@ const NavBar = ({ onLogout }) => {
 
             <Typography
               component={Link}
-              to="/"
+              to="/info"
               className={classes.navlinks}
               color="inherit"
             >

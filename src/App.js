@@ -15,6 +15,7 @@ import Profile from "./components/Profile";
 import { UserContext } from "./contexts/UserContext";
 import productAPI from "./services/products";
 import Review from "./components/review";
+import Info from "./components/info";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,6 +48,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/review" element={<Review />} />
           <Route path="/profile/:username" element={<Profile />} />
+          <Route path="/Info" element={<Info />} />
         </Routes>
         <Footer />
       </BrowserRouter>

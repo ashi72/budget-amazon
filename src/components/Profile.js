@@ -41,6 +41,11 @@ const Profile = () => {
       {!user && <div>loading user...</div>}
       {user && products && <div>Hi {profile?.username}!</div>}
       {user && products && (
+        <div>
+          Contact {profile?.username} at {profile?.email}!
+        </div>
+      )}
+      {user && products && (
         <div className="container">
           <div className="column columns is-multiline">
             {products && products.length ? (

@@ -50,6 +50,28 @@ router.post("/createProductListing", async (req, res) => {
   });
 });
 
+router.delete("/delete/:id", function (req, res) {
+  Product.findOneAndDelete({
+    $or: [{ _id: req.params.id }],
+  })
+    .then((product) => {
+      if (!product) {
+        return res.status(404).send({
+          message: "This product does not exist",
+        });
+      } else
+        return res
+          .status(200)
+          .send({ message: "Product deleted successfully" });
+    })
+    .catch((err) => {
+      return res.status(500).send({
+        message: "Internal server error, please try again later!",
+        error: err,
+      });
+    });
+});
+
 router.get("/fetchProduct/:product_id", async (req, res) => {
   const product = await Product.findOne({
     _id: ObjectId(req.params.product_id),

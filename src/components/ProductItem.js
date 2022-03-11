@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import productAPI from "../services/products";
 
 const ProductItem = (props) => {
   const { product } = props;
+  const navigate = useNavigate();
   return (
     <div className=" column is-half">
       <div className="box">
@@ -26,23 +28,22 @@ const ProductItem = (props) => {
               <span className="tag is-primary">${product.price}</span>
             </b>
             <div>{product.shortDesc}</div>
-            {product.stock > 0 ? (
-              <small>{product.stock + " Available"}</small>
-            ) : (
-              <small className="has-text-danger">Out Of Stock</small>
-            )}
+            {
+              /*{product.stock > 0}*/ true ? (
+                <small>{/*product.stock*/ "Available"}</small>
+              ) : (
+                <small className="has-text-danger">Out Of Stock</small>
+              )
+            }
             <div className="is-clearfix">
               <button
                 className="button is-small is-outlined is-primary   is-pulled-right"
-                onClick={() =>
-                  props.addToCart({
-                    id: product.name,
-                    product,
-                    amount: 1,
-                  })
-                }
+                onClick={() => {
+                  productAPI.remove(product._id);
+                  navigate("/");
+                }}
               >
-                Add to Cart
+                Buy
               </button>
             </div>
           </div>

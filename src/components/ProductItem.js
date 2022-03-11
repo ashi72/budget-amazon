@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import productAPI from "../services/products";
+import userAPI from "../services/users";
 
 const ProductItem = (props) => {
+  const [seller, setSeller] = useState("");
   const { product } = props;
   const navigate = useNavigate();
+
+  useEffect(() => {
+    userAPI.getWithID(product.seller).then((user) => {
+      setSeller(user.user.username);
+    });
+  }, []);
+
   return (
     <div className=" column is-half">
       <div className="box">
@@ -27,6 +36,7 @@ const ProductItem = (props) => {
               <Link to={`/products/${product._id}`}>{product.name} </Link>
               <span className="tag is-primary">${product.price}</span>
             </b>
+            <div>{`Seller: ${seller}`}</div>
             <div>{product.shortDesc}</div>
             {
               /*{product.stock > 0}*/ true ? (
@@ -40,7 +50,7 @@ const ProductItem = (props) => {
                 className="button is-small is-outlined is-primary   is-pulled-right"
                 onClick={() => {
                   productAPI.remove(product._id);
-                  navigate("/");
+                  navigate(`/profile/${seller}`);
                 }}
               >
                 Buy

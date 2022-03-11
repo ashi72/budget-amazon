@@ -16,4 +16,10 @@ const get = async (username) => {
   return response.data;
 };
 
-export default { login, register, get };
+const getWithID = async (id) => {
+  console.log(id);
+  const response = await axios.get(baseUrl + `/fetchWithID/${id}`);
+  return response.data;
+};
+
+export default { login, register, get, getWithID };

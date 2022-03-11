@@ -90,6 +90,24 @@ router.get("/fetchWithEmail/:email", function (req, res) {
     });
 });
 
+router.get("/fetchWithID/:id", function (req, res) {
+  User.findById(req.params.id)
+    .then((user) => {
+      if (!user) {
+        return res.status(200).send({
+          message: "User not found",
+        });
+      }
+      return res.status(200).send({ user, message: "User found!" });
+    })
+    .catch((err) => {
+      return res.status(500).send({
+        message: "Internal server error, please try again later!",
+        error: err,
+      });
+    });
+});
+
 router.get("/fetchWithUsername/:username", function (req, res) {
   User.findOne({
     // search by a username

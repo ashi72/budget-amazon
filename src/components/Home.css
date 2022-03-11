@@ -53,6 +53,8 @@ nav {
   text-align: center;
   align-items: center;
   padding-top: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
 }
 .navbaraddprod {
   color: #2774ae;
@@ -64,4 +66,5 @@ nav {
 .LogoImage {
   height: 400px;
   width: 400px;
+  margin-top: -50px;
 }

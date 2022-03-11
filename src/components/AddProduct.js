@@ -95,6 +95,16 @@ const AddProduct = () => {
                 onChange={handleChange}
               />
             </div>
+            <div className="field">
+              <label className="label">Image URL: </label>
+              <input
+                className="input"
+                type="text"
+                name="imageURL"
+                value={values.imageURL}
+                onChange={handleChange}
+              />
+            </div>
             <div className="field is-clearfix">
               <button
                 className="button is-primary is-outlined is-pulled-right"

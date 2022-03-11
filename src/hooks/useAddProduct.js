@@ -12,6 +12,7 @@ const useAddProduct = (validate) => {
     description: "",
     condition: "",
     seller: "",
+    imageURL: "",
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();

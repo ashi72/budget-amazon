@@ -22,4 +22,5 @@ export const ERRORS = {
   SHORT_DESC_REQ: "You must input a short description for your product!",
   DESC_REQ: "You must input a longer description for your product as well!",
   CONDITION_REQ: "You must input what condition your product is in!",
+  IMAGE_URL_REQ: "You must input a URL containing an image!",
 };

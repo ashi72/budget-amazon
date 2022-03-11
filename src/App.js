@@ -10,7 +10,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import ProductList from "./components/ProductList";
-import ProductItem from "./components/ProductItem";
+import ProductDetail from "./components/ProductDetail";
 import { UserContext } from "./contexts/UserContext";
 import productAPI from "./services/products";
 
@@ -42,7 +42,7 @@ function App() {
           <Route path="/addproduct" element={<AddProduct />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/products" element={<ProductList />} />
-          <Route path="/product" element={<ProductItem />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>

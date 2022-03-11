@@ -40,7 +40,7 @@ const NavBar = ({ onLogout }) => {
 
   return (
     <>
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="relative" className={classes.appBar}>
         <Toolbar>
           <Typography
             component={Link}

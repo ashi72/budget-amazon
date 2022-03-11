@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import loginAPI from "../services/login.js";
+import productAPI from "../services/products";
 
 import ErrorMessage from "./ErrorMessage";
 import LabelledInput from "./LabelledInput";
@@ -24,13 +25,12 @@ const SignIn = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
     try {
       const user = await loginAPI.login({
         username,
         password,
       });
-      setUsername("");
+      productAPI.setToken(user.token);
       setPassword("");
       localStorage.setItem("user", JSON.stringify(user));
       navigate("/", { replace: true });
@@ -60,7 +60,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <h1>Sign into your account!</h1>
+      <h1 className="signinwords">Sign into your account!</h1>
       <ErrorMessage messages={error} />
       <form onSubmit={handleLogin}>
         <LabelledInput
@@ -84,6 +84,9 @@ const SignIn = () => {
         >
           Sign In
         </button>
+        <span className="linktoregister">
+          Don't have an account? Register <Link to="/register">here</Link>
+        </span>
       </form>
     </div>
   );

@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import registerAPI from "./services/register";
+import productAPI from "../services/products";
 
-const SignupInput = (validate) => {
+const useAddProduct = (validate) => {
   const [values, setValues] = useState({
     name: "",
-    UID: "",
-    username: "",
-    email: "",
-    password: "",
-    confpassword: "",
+    price: "",
+    stock: "",
+    shortDesc: "",
+    description: "",
+    condition: "",
+    seller: "",
   });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -18,14 +19,13 @@ const SignupInput = (validate) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrors(validate(values));
-    console.log(errors);
     if (Object.keys(errors).length !== 0) {
       alert("nono");
       return;
     }
     try {
-      const user = await registerAPI.register(values);
-      navigate("/", { replace: true });
+      const product = await productAPI.create(values);
+      navigate("/");
     } catch (e) {
       // if (!error.includes(ERROR.WRONG_COMBO)) {
       //   setError(error.concat(ERROR.WRONG_COMBO));
@@ -40,7 +40,7 @@ const SignupInput = (validate) => {
       [name]: value,
     });
   };
-  return { handleChange, values, errors, handleSubmit };
+  return { handleChange, handleSubmit, values, errors };
 };
 
-export default SignupInput;
+export default useAddProduct;

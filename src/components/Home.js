@@ -1,10 +1,25 @@
+import "./Home.css";
+import BruinMarketLogo from "../Bruin_Market_Home.png";
 const Home = () => {
-    return (
-        <>
-            <p>hello! want to get some pre-bruin-loved stuff? you've come to the right place!</p>
-            <input type="text" placeholder="search for items here"/>
-        </>
-    )
-}
+  return (
+    <>
+      <div className="LogoAlign">
+        <img src={BruinMarketLogo} alt="Bruin Market Logo" />
+      </div>
+      <div className="searchbar">
+        <input
+          type="text"
+          placeholder="search for items here"
+          name="searchbarname"
+        />
+      </div>
+      <div className="linktocatalog">
+        <a href="#" className="linktocatalog">
+          Browse our catalog
+        </a>
+      </div>
+    </>
+  );
+};
 
-export default Home
+export default Home;

@@ -3,7 +3,7 @@
 }
 
 form {
-  padding-top: 50px;
+  padding-top: 30px;
   max-width: 500px;
   margin: 0 auto;
   display: flex;
@@ -15,9 +15,12 @@ form {
   position: relative;
   display: flex;
   flex-flow: column;
+  text-align: center;
+  width: 100%;
 }
 
-.labelled-input:focus-within label, .labelled-input .filled {
+.labelled-input:focus-within label,
+.labelled-input .filled {
   transform: translate(0, 12px) scale(0.8);
 }
 .labelled-input:focus-within label {
@@ -40,4 +43,24 @@ form {
   padding: 24px 16px 4px 14px;
   font-size: 16px;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+button[type="submit"] {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: #2774ae;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+.signinwords {
+  padding-top: 20px;
+}
+.linktoregister {
+  margin-top: -10px;
 }

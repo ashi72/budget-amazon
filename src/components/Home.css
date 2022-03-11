@@ -44,9 +44,10 @@ nav {
   padding-top: 100px;
 }
 .Footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
+  left: 0;
 }
 .linktocatalog {
   text-align: center;

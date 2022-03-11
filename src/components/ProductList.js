@@ -13,6 +13,9 @@ const ProductList = () => {
 
   useEffect(() => {
     if (query) setSearch(query);
+  }, []);
+
+  useEffect(() => {
     productAPI.getAll().then((products) => {
       setProducts(
         products.filter((product) => {
